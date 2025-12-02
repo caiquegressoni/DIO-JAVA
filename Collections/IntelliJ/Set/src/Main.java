@@ -1,6 +1,7 @@
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Predicate;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,9 +22,13 @@ public class Main {
             System.out.println(iterator.next());
         }*/
 
-        //users.removeAll(List.of(new User(1, "Joao"), new User(5, "Romario")));
+        //System.out.println(users.removeAll(List.of(new User(1, "Joao"), new User(5, "Romario"))));
+        //users.removeIf(user -> user.getId() == 1);
+        users.removeIf(Predicate.not(user -> user.getId() > 1));
         System.out.println(users);
     }
 }
 /*
 *O modelo do Set diferente do List, não permite duplicidades */
+/*
+* Aula de SET, minuto 27:31*/
