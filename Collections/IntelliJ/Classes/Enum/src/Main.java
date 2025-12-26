@@ -1,3 +1,5 @@
+import enumeration.OperationEnum;
+
 import java.util.Scanner;
 
 public class Main {
@@ -22,6 +24,16 @@ public class Main {
             if (option == 5){
                 break;
             }
+
+            var selectOption = OperationEnum.values() [option -1];
+
+            System.out.println("Informe o primeiro valor: ");
+            var value1 = sc.nextInt();
+            System.out.println("Informe o segundo valor: ");
+            var value2 = sc.nextInt();
+
+            var result = selectOption.getCalculate().apply(value1, value2);
+            System.out.printf("%s %s %s = %s\n", value1, selectOption.getSynbol(), value2, result);
         }
     }
 }
