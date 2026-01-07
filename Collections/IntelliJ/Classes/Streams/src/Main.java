@@ -6,39 +6,36 @@ import java.util.List;
 
 import static domain.ContactType.EMAIL;
 import static domain.ContactType.PHONE;
+import static domain.Sex.FEMALE;
 import static domain.Sex.MALE;
 
 public class Main {
     public static void main(String[] args) {
+        List<User> users = new ArrayList<>();
     }
 
     private static List<User> generetUsers(){
         var contact1 = List.of(
-                new Contact("", PHONE),
-                new Contact("", EMAIL)
+                new Contact("(19) 1234-56321", PHONE),
+                new Contact("jose@jose.com", EMAIL)
         );
         var contact2 = List.of(
-                new Contact("", PHONE),
-                new Contact("", EMAIL)
+                new Contact("(19) 3214-78954", PHONE),
+                new Contact("ana@ana.com", EMAIL)
         );
-        var contact3 = List.of(
-                new Contact("", PHONE),
-                new Contact("", EMAIL)
-        );
+        var contact3 = List.of();
         var contact4 = List.of(
-                new Contact("", PHONE),
-                new Contact("", EMAIL)
+                new Contact("joaquina@joaquina.com", EMAIL)
         );
         var contact5 = List.of(
-                new Contact("", PHONE),
-                new Contact("", EMAIL)
+                new Contact("(34) 4627-32228", PHONE)
         );
 
         var user1 = new User("Jose", 34, MALE, new ArrayList<>(contact1));
-        var user2 = new User("Jose", 34, MALE, new ArrayList<>(contact2));
-        var user3 = new User("Jose", 34, MALE, new ArrayList<>(contact3));
-        var user4 = new User("Jose", 34, MALE, new ArrayList<>(contact4));
-        var user5 = new User("Jose", 34, MALE, new ArrayList<>(contact5));
+        var user2 = new User("Ana", 26, FEMALE, new ArrayList<>(contact2));
+        var user3 = new User("Pedro", 18, MALE, new ArrayList<>());
+        var user4 = new User("Joaquina", 40, FEMALE, new ArrayList<>(contact4));
+        var user5 = new User("Alex", 20, MALE, new ArrayList<>(contact5));
 
         return List.of(user1, user2, user3, user4, user5);
     }
