@@ -2,16 +2,26 @@ import domain.Contact;
 import domain.User;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import static domain.ContactType.EMAIL;
 import static domain.ContactType.PHONE;
 import static domain.Sex.FEMALE;
 import static domain.Sex.MALE;
+import static java.util.stream.Collectors.toList;
 
 public class Main {
     public static void main(String[] args) {
-        List<User> users = new ArrayList<>();
+        List<User> users = new ArrayList<>(generetUsers());
+
+        var values = users.stream()
+                .flatMap(u -> u.contact().stream())
+                .sorted(Comparator.comparing(Contact::description))
+                .toList();
+
+        values.forEach(System.out::println);
+
     }
 
     private static List<User> generetUsers(){
