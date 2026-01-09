@@ -2,25 +2,23 @@ import domain.Contact;
 import domain.User;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static domain.ContactType.EMAIL;
 import static domain.ContactType.PHONE;
 import static domain.Sex.FEMALE;
 import static domain.Sex.MALE;
-import static java.util.stream.Collectors.toList;
 
 public class Main {
     public static void main(String[] args) {
         List<User> users = new ArrayList<>(generetUsers());
 
         var values = users.stream()
-                .flatMap(u -> u.contact().stream())
-                .sorted(Comparator.comparing(Contact::description))
-                .toList();
+                .filter(u -> u.sex() == FEMALE)
+                .collect(Collectors.toMap(User::name, user -> user));
 
-        values.forEach(System.out::println);
+        values.forEach((key, value) -> System.out.printf("key: %s | value: %s\n", key, value));
 
     }
 
@@ -83,4 +81,24 @@ Code 3:
                 .map(n -> values1.stream().reduce(n, (n1, n2) -> n1 - n2))
                 .collect(Collectors.toSet());
         System.out.println(newValues);
+
+Code 4:
+        List<User> users = new ArrayList<>(generetUsers());
+
+        var values = users.stream()
+                .flatMap(u -> u.contact().stream())
+                .sorted(Comparator.comparing(Contact::description))
+                .map(c -> String.format("{\n'description': '%s',\n 'type': '%s'\n}", c.description(), c.type()))
+                .toList();
+
+Code 4:
+        var values = users.stream()
+                .flatMap(u -> u.contact().stream())
+                .filter(c -> c.type() == PHONE)
+                .map(c -> c.description().replace("(", "")
+                        .replace(" ", "")
+                        .replace(")", "")
+                        .replace("-", ""))
+                .mapToLong(Long::parseLong)
+                .max();
 */
