@@ -6,15 +6,26 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        Date date = new Date();
+        OffsetDateTime offsetDateTime = OffsetDateTime.now();
+
+        offsetDateTime = offsetDateTime.withOffsetSameInstant(ZoneOffset.UTC);
+
+        System.out.println(offsetDateTime);
+
+        var date = Date.from(offsetDateTime.toInstant());
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        LocalDateTime localDateTime = LocalDateTime.ofInstant(calendar.toInstant(), ZoneId.systemDefault());
 
-        System.out.println(localDateTime);
+        System.out.println(date);
+
+
+        OffsetDateTime offsetDateTime1 = Calendar.getInstance().getTime()
+                .toInstant().atOffset(ZoneOffset.ofHours(-3));
+        System.out.println(offsetDateTime1);
     }
 }
-/*Code 1:
+/*
+Code 1:
         LocalDate localDate = LocalDate.now();
         System.out.println(localDate);
 
@@ -35,5 +46,13 @@ public class Main {
         calendar.setTime(date);
 
         System.out.println(date);
-*
-* */
+
+Code 2:
+        Date date = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(calendar.toInstant(), ZoneId.systemDefault());
+
+        System.out.println(localDateTime);
+        System.out.println(Duration.between(localDateTime, LocalDateTime.now()).toMillis());
+*/
