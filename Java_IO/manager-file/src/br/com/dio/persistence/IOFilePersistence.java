@@ -49,8 +49,8 @@ public class IOFilePersistence implements FilePersistence {
             String line;
             do {
                 line = reader.readLine();
-                if((line != null)) content.append(line).append(System.lineSeparator());
-            }while (line != null);
+                if ((line != null)) content.append(line).append(System.lineSeparator());
+            } while (line != null);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -60,7 +60,21 @@ public class IOFilePersistence implements FilePersistence {
 
     @Override
     public String findBy(String sentence) {
-        return "";
+        String founded;
+        try (
+                var reader = new BufferedReader(new FileReader(currentDir + storageDir + fileName))
+        ) {
+            String line = reader.readLine();
+            while (line != null){
+                if((line != null) && (line.contains(sentence))){
+                    founded = line;
+                    break;
+                }
+            }
+        }catch (IOException ex){
+            ex.printStackTrace();
+        }
+        return founded;
     }
 
     private void clearFile() {
