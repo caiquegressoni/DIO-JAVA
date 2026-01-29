@@ -13,5 +13,13 @@ public class Main {
         persistence.write("Ana;ana@ana;29/04/1999");
 
         System.out.println(persistence.findAll());
+        System.out.println("===============================");
+        System.out.println(persistence.remove(";ana@"));
+        System.out.println("===============================");
+        System.out.println(persistence.findBy("Pedro;"));
+        System.out.println(persistence.findBy(";ana@"));
+        System.out.println(persistence.findBy(";05/03/1999"));
+        System.out.println("===============================");
+
     }
 }
