@@ -2,6 +2,7 @@ package br.com.dio.persistence;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class IOFilePersistence implements FilePersistence {
@@ -36,8 +37,7 @@ public class IOFilePersistence implements FilePersistence {
 
     @Override
     public boolean remove(String sentence) {
-        var content = findAll();
-        var contentList = new ArrayList<>(Stream.of(content.split(System.lineSeparator())).toList());
+        var contentList = toListStrings();
 
         clearFile();
         if (contentList.stream().noneMatch(c -> c.contains(sentence))) return false;
@@ -50,17 +50,17 @@ public class IOFilePersistence implements FilePersistence {
 
     @Override
     public String replace(String oldContent, String newContent) {
-        var content = findAll();
-        var contentList = new ArrayList<>(Stream.of(content.split(System.lineSeparator())).toList());
+        var contentList = toListStrings();
 
         if(contentList.stream().noneMatch(c -> c.contains(oldContent))) return "";
 
         clearFile();
         contentList.stream()
-                .map(c -> !c.contains(oldContent) ? newContent : c)
+                .map(c -> c.contains(oldContent) ? newContent : c)
                 .forEach(this::write);
         return newContent;
     }
+
 
     @Override
     public String findAll() {
@@ -96,6 +96,11 @@ public class IOFilePersistence implements FilePersistence {
             ex.printStackTrace();
         }
         return found;
+    }
+
+    private List<String> toListStrings() {
+        var content = findAll();
+        return new ArrayList<>(Stream.of(content.split(System.lineSeparator())).toList());
     }
 
     private void clearFile() {

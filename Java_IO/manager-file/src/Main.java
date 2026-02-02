@@ -20,6 +20,9 @@ public class Main {
         System.out.println(persistence.findBy(";ana@"));
         System.out.println(persistence.findBy(";05/03/1999"));
         System.out.println("===============================");
+        System.out.println(persistence.replace("@pedro;10/02;", "Jorge;jorge@jorge;25/10/1999"));
+        System.out.println("===============================");
+        System.out.println(persistence.findAll());
 
     }
 }
