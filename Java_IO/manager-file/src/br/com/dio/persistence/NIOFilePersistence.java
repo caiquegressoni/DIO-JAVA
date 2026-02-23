@@ -21,12 +21,11 @@ public class NIOFilePersistence implements FilePersistence {
     @Override
     public String write(String data) {
         try (var file = new RandomAccessFile(new File(currentDir + storageDir + fileName), "rw");
-             var channel=file.getChannel();
-        ){
+        ) {
             file.seek(file.length());
             file.writeBytes(data);
             file.writeBytes(System.lineSeparator());
-        } catch(IOException ex){
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
         return data;
