@@ -5,20 +5,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class IOFilePersistence implements FilePersistence {
+public class IOFilePersistence extends FilePersistence {
 
-    private final String currentDir = System.getProperty("user.dir"); //Retorna o diretorio atual.
-    private final String storageDir = "/managerFiles/IO/"; //Salvar os arquivos manipulados.
-    private final String fileName;
 
-    public IOFilePersistence(String fileName) throws IOException {
-        this.fileName = fileName;
+
+    public IOFilePersistence(final String fileName) throws IOException {
+        super(fileName,"/managerFiles/IO/");
         var file = new File(currentDir + storageDir);
         //Verifica se o arquivo e caso nao cria um novo. Tambem dispara uma Exception para caso de erro
         if (!file.exists() && !file.mkdirs()) throw new IOException("Erro a criar arquivo");
 
         clearFile();
     }
+
 
     @Override
     public String write(String data) {
