@@ -35,5 +35,5 @@ tasks.withType<Checkstyle>().configureEach{
     }
 }
 tasks.checkstyleMain{
-    source = fileTree("src/main/java")
+    source = fileTree("src/java/main")
 }

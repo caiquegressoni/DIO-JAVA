@@ -22,5 +22,9 @@ public class Main {
         dto.setName("Maria");
         dto.setBirthDate(LocalDate.now().minusYears(30));
         System.out.println(mapper.toModel(dto));
+
+    }
+    public String returnTest(){
+        return null;
     }
 }

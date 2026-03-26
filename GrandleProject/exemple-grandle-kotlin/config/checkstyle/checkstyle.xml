@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+        "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+        "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+
+    <!-- Verifica tamanho máximo da linha -->
+    <module name="LineLength">
+        <property name="max" value="120"/>
+    </module>
+
+    <module name="TreeWalker">
+
+        <!-- Obriga uso de chaves em if/for/while -->
+        <module name="NeedBraces"/>
+
+        <!-- Evita blocos vazios -->
+        <module name="EmptyBlock"/>
+
+        <!-- Evita imports duplicados -->
+        <module name="RedundantImport"/>
+
+        <!-- Evita imports não usados -->
+        <module name="UnusedImports"/>
+
+    </module>
+
+</module>
