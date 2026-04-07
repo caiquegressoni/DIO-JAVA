@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Old/ArrayList/ArrayList.iml" filepath="$PROJECT_DIR$/Old/ArrayList/ArrayList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Old/Classes/BigDecimal/BigDecimal.iml" filepath="$PROJECT_DIR$/Old/Classes/BigDecimal/BigDecimal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Old/Classes/Calendar/Calendar.iml" filepath="$PROJECT_DIR$/Old/Classes/Calendar/Calendar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Old/Classes/Date/Date.iml" filepath="$PROJECT_DIR$/Old/Classes/Date/Date.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Old/Classes/Enum/Enum.iml" filepath="$PROJECT_DIR$/Old/Classes/Enum/Enum.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Old/Classes/Generics/Generics.iml" filepath="$PROJECT_DIR$/Old/Classes/Generics/Generics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/IntelliJ.iml" filepath="$PROJECT_DIR$/.idea/IntelliJ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ListaDeExercicios/ListaDeExercicios.iml" filepath="$PROJECT_DIR$/ListaDeExercicios/ListaDeExercicios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Old/Map/Map.iml" filepath="$PROJECT_DIR$/Old/Map/Map.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Old/Classes/OffsetDate/OffsetDate.iml" filepath="$PROJECT_DIR$/Old/Classes/OffsetDate/OffsetDate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Old/Classes/Optional/Optional.iml" filepath="$PROJECT_DIR$/Old/Classes/Optional/Optional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Old/Set/Set.iml" filepath="$PROJECT_DIR$/Old/Set/Set.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Old/Classes/Streams/Streams.iml" filepath="$PROJECT_DIR$/Old/Classes/Streams/Streams.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Old/Classes/String/String.iml" filepath="$PROJECT_DIR$/Old/Classes/String/String.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Old/Classes/StringBuilderBuffer/StringBuilderBuffer.iml" filepath="$PROJECT_DIR$/Old/Classes/StringBuilderBuffer/StringBuilderBuffer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Old/Classes/ThreadAndRunnable/ThreadAndRunnable.iml" filepath="$PROJECT_DIR$/Old/Classes/ThreadAndRunnable/ThreadAndRunnable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Old/Wrappers/Wrappers.iml" filepath="$PROJECT_DIR$/Old/Wrappers/Wrappers.iml" />
+    </modules>
+  </component>
+</project>
