@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 public class SerializerProcessor {
-    public String serialazer(final Object object) {
+    public String serialazer(final Object object) throws IllegalAccessException {
         Objects.requireNonNull(object, "Enter with non null object");
 
        var clazz = object.getClass();
@@ -22,8 +22,19 @@ public class SerializerProcessor {
         var fieldNameFormatter = typeAnnotation.fieldFormat().getFormat();
         var prettify = typeAnnotation.pretify();
 
-        Map<String, Object> elements = new HashMap<>()
+        Map<String, Object> elements = new HashMap<>();
+        for(var field : clazz.getDeclaredFields()){
+            field.setAccessible(true);
+            elements.put(field.getName(), field.get(object));
+        }
 
+        var annotationMethods = Stream.of(object.getClass().getMethods())
+                .filter(m -> Stream.of(m.getAnnotations())
+                        .anyMatch(a -> a.annotationType()
+                                .equals(SerializerType.class)))
+                .toList();
+
+        for(var method : clazz.getDeclaredMethods()){}
         return null;
     }
 }
