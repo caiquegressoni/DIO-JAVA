@@ -2,6 +2,7 @@ package dio.spring_security.config;
 
 import dio.spring_security.model.UserModel;
 import dio.spring_security.repository.UserRepository;
+import org.jspecify.annotations.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,7 +19,7 @@ public class SecurityDatabaseService implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(@NonNull String username) throws UsernameNotFoundException {
         UserModel userEntity = userRepository.findByUsername(username);
         if(userEntity == null){
             throw new UsernameNotFoundException(username);
@@ -27,9 +28,8 @@ public class SecurityDatabaseService implements UserDetailsService {
         userEntity.getRoles().forEach(role -> {
             authorities.add(new SimpleGrantedAuthority("ROLE_" + role));
         });
-        UserDetails userDetails = new org.springframework.security.core.userdetails.User(userEntity.getUsername(),
-                userEntity.getPassword(), authorities);
 
-        return userDetails;
+        return new org.springframework.security.core.userdetails.User(userEntity.getUsername(),
+                userEntity.getPassword(), authorities);
     }
 }
