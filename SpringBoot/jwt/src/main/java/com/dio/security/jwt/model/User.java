@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 @Table(name = "tab_user")
 public class User {
     @Id
@@ -15,12 +16,15 @@ public class User {
     private String name;
     @Column(length = 50, nullable = false)
     private String username;
-    @Column(length = 50, nullable = false)
+    @Column(length = 100, nullable = false)
     private String password;
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "tab_user_roles", joinColumns = @JoinColumn(name = "username"))
     @Column(name = "role_id")
     private List<String> roles = new ArrayList<>();
+
+    public User() {
+    }
 
     public User(Integer id, String name, String username, String password, List<String> roles) {
         this.id = id;
