@@ -1,3 +1,3 @@
 databaseChangelog:
-  includeAll:
-    path: db/changelog/migration
+  - includeAll:
+      path: db/changelog/migration
