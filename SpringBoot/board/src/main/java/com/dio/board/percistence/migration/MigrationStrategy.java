@@ -19,7 +19,7 @@ import static com.dio.board.percistence.config.ConnectionConfig.getConnection;
 public class MigrationStrategy {
     private final Connection connection;
 
-    private void executeMigration(){
+    public void executeMigration(){
         var originalOut = System.out;
         var originalErr =  System.err;
         try{

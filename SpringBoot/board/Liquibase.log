@@ -1,0 +1,67 @@
+out. 12, 2026 5:33:38 PM liquibase.changelog
+INFO: Reading resource: db/changelog/migration/db.changeLog-202610101724.sql
+out. 12, 2026 5:33:38 PM liquibase.changelog
+INFO: Reading resource: db/changelog/migration/db.changeLog-202610121047.sql
+out. 12, 2026 5:33:38 PM liquibase.changelog
+INFO: Reading resource: db/changelog/migration/db.changeLog-202610121113.sql
+out. 12, 2026 5:33:38 PM liquibase.changelog
+INFO: Reading resource: db/changelog/migration/db.changeLog-202610121122.sql
+out. 12, 2026 5:33:38 PM liquibase.changelog
+INFO: Creating database history table with name: board.DATABASECHANGELOG
+out. 12, 2026 5:33:40 PM liquibase.changelog
+INFO: Reading from board.DATABASECHANGELOG
+out. 12, 2026 5:33:42 PM liquibase.lockservice
+INFO: Successfully acquired change log lock
+out. 12, 2026 5:33:42 PM liquibase.command
+INFO: Using deploymentId: 1837222780
+out. 12, 2026 5:33:42 PM liquibase.changelog
+INFO: Reading from board.DATABASECHANGELOG
+Running Changeset: db/changelog/migration/db.changeLog-202610101724.sql::202610101724::caique
+out. 12, 2026 5:33:43 PM liquibase.changelog
+INFO: Custom SQL executed
+out. 12, 2026 5:33:43 PM liquibase.changelog
+INFO: ChangeSet db/changelog/migration/db.changeLog-202610101724.sql::202610101724::caique ran successfully in 909ms
+Running Changeset: db/changelog/migration/db.changeLog-202610121047.sql::202610121047::caique
+out. 12, 2026 5:33:45 PM liquibase.changelog
+INFO: Custom SQL executed
+out. 12, 2026 5:33:45 PM liquibase.changelog
+INFO: ChangeSet db/changelog/migration/db.changeLog-202610121047.sql::202610121047::caique ran successfully in 1414ms
+Running Changeset: db/changelog/migration/db.changeLog-202610121113.sql::202610121113::caique
+out. 12, 2026 5:33:46 PM liquibase.changelog
+INFO: Custom SQL executed
+out. 12, 2026 5:33:46 PM liquibase.changelog
+INFO: ChangeSet db/changelog/migration/db.changeLog-202610121113.sql::202610121113::caique ran successfully in 1236ms
+Running Changeset: db/changelog/migration/db.changeLog-202610121122.sql::202610121122::caique
+out. 12, 2026 5:33:48 PM liquibase.changelog
+INFO: Custom SQL executed
+out. 12, 2026 5:33:48 PM liquibase.changelog
+INFO: ChangeSet db/changelog/migration/db.changeLog-202610121122.sql::202610121122::caique ran successfully in 1273ms
+
+UPDATE SUMMARY
+Run:                          4
+Previously run:               0
+Filtered out:                 0
+-------------------------------
+Total change sets:            4
+
+out. 12, 2026 5:33:48 PM liquibase.util
+INFO: UPDATE SUMMARY
+out. 12, 2026 5:33:48 PM liquibase.util
+INFO: Run:                          4
+out. 12, 2026 5:33:48 PM liquibase.util
+INFO: Previously run:               0
+out. 12, 2026 5:33:48 PM liquibase.util
+INFO: Filtered out:                 0
+out. 12, 2026 5:33:48 PM liquibase.util
+INFO: -------------------------------
+out. 12, 2026 5:33:48 PM liquibase.util
+INFO: Total change sets:            4
+out. 12, 2026 5:33:48 PM liquibase.util
+INFO: Update summary generated
+out. 12, 2026 5:33:48 PM liquibase.command
+INFO: Update command completed successfully.
+Liquibase: Update has been successful. Rows affected: 4
+out. 12, 2026 5:33:48 PM liquibase.lockservice
+INFO: Successfully released change log lock
+out. 12, 2026 5:33:48 PM liquibase.command
+INFO: Command execution complete
